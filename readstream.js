@@ -1,5 +1,5 @@
-const {ReadStream } = require('fs')
-const stream = ReadStream('./sth/big.txt')
+const {createReadStream } = require('fs')
+const stream = createReadStream('./sth/big.txt' , {highWaterMark:90000})
 stream.on('data' , (data)=>{
     console.log(data)
 })
